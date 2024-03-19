@@ -31,7 +31,9 @@ loader.collapse("#{__dir__}/langchain/assistants")
 loader.collapse("#{__dir__}/langchain/tool/calculator")
 loader.collapse("#{__dir__}/langchain/tool/database")
 loader.collapse("#{__dir__}/langchain/tool/google_search")
-loader.collapse("#{__dir__}/langchain/tool/ruby_code_interpreter")
+if RUBY_VERSION <= "3.2.0"
+  loader.collapse("#{__dir__}/langchain/tool/ruby_code_interpreter")
+end
 loader.collapse("#{__dir__}/langchain/tool/weather")
 loader.collapse("#{__dir__}/langchain/tool/wikipedia")
 loader.setup
